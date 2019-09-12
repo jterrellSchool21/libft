@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strrchr(const char *str, int ch)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	int		res;
+	char	*last_pos;
 
-	res = 0;
-	i = 0;
-	while (str[i])
+	last_pos = (0);
+	while (*s)
 	{
-		if (str[i] == ch)
-			res = i;
-		i++;
+		if (*s == c)
+			last_pos = (char*)s;
+		++s;
 	}
-	if (res)
-		return ((char*)(str + res));
-	return (NULL);
+	if (last_pos)
+		return (last_pos);
+	if (c == '\0')
+		return ((char*)s);
+	return (0);
 }

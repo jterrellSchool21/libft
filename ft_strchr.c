@@ -10,18 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
+	while (*s)
 	{
-		if (str[i] == ch)
-			return ((char*)(str + i));
-		i++;
+		if (*s == c)
+			return ((char*)s);
+		++s;
 	}
-	return (NULL);
+	if (c == '\0')
+		return ((char*)s);
+	return (0);
 }

@@ -6,18 +6,18 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 16:51:34 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/05 17:15:10 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/10 19:33:07 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memset(void *destination, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (n--)
-		((unsigned char *)destination)[i] = (unsigned char)c;
-	return (destination);
+	ptr = (unsigned char*)b;
+	while (len-- > 0)
+		*(ptr++) = (unsigned char)c;
+	return (b);
 }

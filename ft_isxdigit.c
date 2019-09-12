@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isxdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 17:27:31 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/10 19:54:55 by jterrell         ###   ########.fr       */
+/*   Created: 2019/09/10 19:08:14 by jterrell          #+#    #+#             */
+/*   Updated: 2019/09/10 19:08:16 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_isxdigit(int c)
 {
-	unsigned char		*ptr;
-	const unsigned char	*ptr2;
-
-	if (!dst && !src)
-		return (0);
-	ptr = (unsigned char*)dst;
-	ptr2 = (unsigned char*)src;
-	while (n-- > 0)
-		*(ptr++) = *(ptr2++);
-	return (dst);
+	return ((c >= '0' && c <= '9') ||\
+			(c >= 'A' && c <= 'F') ||\
+			(c >= 'a' && c <= 'f') ? 1 : 0);
 }

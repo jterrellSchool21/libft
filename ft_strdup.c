@@ -11,22 +11,24 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 
-char	*ft_strdup(const char *str)
+char	*ft_strdup(const char *src)
 {
+	char	*new;
 	int		i;
-	char	*res;
+	int		size;
 
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
 	i = 0;
-	while (str[i])
-		i++;
-	res = (char*)malloc(sizeof(char) * (i + 1));
-	i = 0;
-	while (str[i])
+	while (src[i])
 	{
-		res[i] = str[i];
+		new[i] = src[i];
 		i++;
 	}
-	return (res);
+	new[i] = '\0';
+	return (new);
 }

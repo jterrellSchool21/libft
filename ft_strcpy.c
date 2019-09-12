@@ -6,11 +6,11 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 16:32:58 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/04 16:39:35 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/10 19:10:37 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strcpy(char *destination, const char *source)
+char	*ft_strcpy(char *destination, const char *source)
 {
 	int		i;
 

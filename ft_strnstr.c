@@ -6,34 +6,32 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 17:59:49 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/04 18:21:20 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:18:36 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *strb, const char *stra, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int		i;
-	int		flag;
-	int		j;
+	unsigned int pos;
+	unsigned int i;
 
-	flag = 1;
-	i = 0;
-	j = 0;
-	while (i < len)
+	if (!*to_find)
+		return ((char*)str);
+	pos = 0;
+	while (str[pos] != '\0' && (size_t)pos < len)
 	{
-		if (strb[i] == stra[0])
+		if (str[pos] == to_find[0])
 		{
-			while (stra[j] && stra[j] == strb[j + i])
-			{
-				j++;
-			}
-			if (stra[j] == '\0')
-				return ((char*)(strb + i));
-			j = 0;
+			i = 1;
+			while (to_find[i] != '\0' && str[pos + i] == to_find[i] &&\
+			(size_t)(pos + i) < len)
+				++i;
+			if (to_find[i] == '\0')
+				return ((char*)&str[pos]);
 		}
-		i++;
+		++pos;
 	}
-	return (NULL);
+	return (0);
 }

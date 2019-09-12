@@ -6,26 +6,28 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:42:39 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/04 19:13:34 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/10 19:35:03 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*srcc;
-	char	*dstc;
-	size_t	i;
+	size_t				i;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	i = -1;
-	srcc = (char *)src;
-	dstc = (char *)dst;
-	if (srcc < dstc)
-		while ((int)(--len) >= 0)
-			*(dstc + len) = *(srcc + len);
+	if (!dst && !src)
+		return (0);
+	ptr = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	i = 0;
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
 	else
-		while (++i < len)
-			*(dstc + i) = *(srcc + i);
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
 	return (dst);
 }

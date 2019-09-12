@@ -10,30 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strstr(const char *strb, const char *stra)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	int		i;
-	int		flag;
-	int		j;
+	unsigned int pos;
+	unsigned int i;
 
-	flag = 1;
-	i = 0;
-	j = 0;
-	while (strb[i])
+	if (!*to_find)
+		return ((char*)str);
+	pos = 0;
+	while (str[pos] != '\0')
 	{
-		if (strb[i] == stra[0])
+		if (str[pos] == to_find[0])
 		{
-			while (stra[j] && stra[j] == strb[j + i])
-			{
-				j++;
-			}
-			if (stra[j] == '\0')
-				return ((char*)(strb + i));
-			j = 0;
+			i = 1;
+			while (to_find[i] != '\0' && str[pos + i] == to_find[i])
+				++i;
+			if (to_find[i] == '\0')
+				return ((char*)&str[pos]);
 		}
-		i++;
+		++pos;
 	}
-	return (NULL);
+	return (0);
 }
