@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char			*ft_strcat(char *destination, const char *append)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (destination[i] != '\0')
 		i++;
 	j = 0;
-	while (src[j] != '\0')
+	while (append[j] != '\0')
 	{
-		dest[i + j] = src[j];
+		destination[i + j] = append[j];
 		j++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	destination[i + j] = '\0';
+	return (destination);
 }

@@ -12,20 +12,20 @@
 
 #include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *destination, const char *source, size_t n)
 {
-	unsigned int i;
+	size_t	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (source[i] != '\0' && i < n)
 	{
-		dest[i] = src[i];
+		destination[i] = source[i];
 		++i;
 	}
 	while (i < n)
 	{
-		dest[i] = '\0';
+		destination[i] = '\0';
 		i++;
 	}
-	return (dest);
+	return (destination);
 }

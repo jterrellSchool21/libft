@@ -6,7 +6,7 @@
 #    By: jterrell <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 19:01:32 by jterrell          #+#    #+#              #
-#    Updated: 2019/09/16 18:07:27 by jterrell         ###   ########.fr        #
+#    Updated: 2019/09/19 11:28:00 by jterrell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c\
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
 	  ft_lstnew.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstadd.c\
 	  ft_lstdel.c
+
 OBJ = $(SRC:.c=.o)
 NAME = libft.a
 
@@ -37,7 +38,7 @@ $(NAME):
 .PHONY: all clean fclean re
 
 clean:
-	@rm -f $(OBJ) qwe
+	@rm -f $(OBJ)
 
 fclean: clean
 	@rm -f $(NAME)

@@ -6,19 +6,19 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 17:32:10 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/04 17:43:43 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/18 16:30:04 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int ch)
 {
-	while (*s)
+	while (*str)
 	{
-		if (*s == c)
-			return ((char*)s);
-		++s;
+		if (*str == ch)
+			return ((char*)str);
+		++str;
 	}
-	if (c == '\0')
-		return ((char*)s);
+	if (ch == '\0')
+		return ((char*)str);
 	return (0);
 }

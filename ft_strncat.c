@@ -6,27 +6,27 @@
 /*   By: jterrell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 17:29:36 by jterrell          #+#    #+#             */
-/*   Updated: 2019/09/04 17:29:52 by jterrell         ###   ########.fr       */
+/*   Updated: 2019/09/18 15:14:49 by jterrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncat(char *dest, char *src, int nb)
+char			*ft_strncat(char *destination, const char *append, size_t n)
 {
-	int i;
-	int j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (destination[i] != '\0')
 		i++;
 	j = 0;
-	while (src[j] != '\0' && j < nb)
+	while (append[j] != '\0' && j < n)
 	{
-		dest[i] = src[j];
+		destination[i] = append[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	destination[i] = '\0';
+	return (destination);
 }
